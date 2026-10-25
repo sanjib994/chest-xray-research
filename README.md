@@ -1,0 +1,77 @@
+# VinBigData_XAI
+
+A product-oriented explainable chest X-ray analysis system derived from
+the completed VinBigData research project.
+
+## Setup
+
+Use Python 3.10 or newer. From a fresh clone, create an environment and
+install the dependencies. On Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+Copy-Item .env.example .env
+```
+
+On macOS or Linux:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+cp .env.example .env
+```
+
+The two model checkpoints are configured for Git LFS. Install Git LFS and
+run `git lfs install` before cloning this repository. If you already
+cloned it, run `git lfs pull` from the project directory.
+
+The application code does not require the separate research dataset.
+Inference requires the model assets listed below. The checkpoint files are
+stored in Git LFS; the prototype evidence manifest and class-specific
+thresholds are included in Git:
+
+| Feature | Required asset | Default location |
+|---|---|---|
+| Classification and post-hoc XAI | ConvNeXt-Tiny checkpoint | `checkpoints/convnext_tiny/convnext_tiny_weak_classes_best.pth` |
+| Classification | Class-specific thresholds | `configs/thresholds/best_validation_thresholds_weak_tuned.csv` |
+| Intrinsic prototype explanation | DenseNet-backed prototype checkpoint | `checkpoints/prototype/prototype_network_full_training_final.pt` |
+| Intrinsic prototype explanation | Prototype evidence manifest | `configs/prototype/P4_v2_prototype_evidence_manifest.csv` |
+
+The `.gitattributes` file configures Git LFS for both checkpoints. If
+running from a separately obtained checkpoint, set the corresponding
+`VINBIGDATA_*` variables in `.env` to absolute paths or paths relative to
+this project. Never commit the research dataset or untrusted
+PyTorch/pickle checkpoints.
+
+The ConvNeXt classifier and its post-hoc XAI do not require the prototype
+assets. Intrinsic prototype endpoints require both the DenseNet-backed
+prototype checkpoint and its evidence manifest. If the threshold file is
+unavailable, predictions use the existing `0.5` threshold fallback.
+The published prototype manifest omits source-image IDs and local paths;
+training X-ray images are not included in this repository.
+
+## Run
+
+Start the API and UI in separate terminals:
+
+```powershell
+python scripts/run_backend.py
+```
+
+```powershell
+python scripts/run_ui.py
+```
+
+The API is available at `http://127.0.0.1:8765/docs`; the Streamlit UI
+normally runs at `http://localhost:8501`.
+
+## Optional research workflows
+
+Calibration and evaluation require the separately maintained research
+dataset and its split files. They are not needed to run the basic app.
+For calibration, set `VINBIGDATA_RESEARCH_ROOT` to the research dataset
+directory before running `python scripts/run_calibration.py`. Do not add
+the dataset to this repository.

@@ -1,0 +1,30 @@
+{
+  "application": {
+    "name": "VinBigData_XAI",
+    "framework": "Streamlit",
+    "version": "1.0.0"
+  },
+  "api": {
+    "base_url": "http://127.0.0.1:8765",
+    "health_endpoint": "/health",
+    "info_endpoint": "/info",
+    "predict_endpoint": "/predict",
+    "timeout_seconds": 300
+  },
+  "upload": {
+    "allowed_extensions": [
+      ".jpg",
+      ".jpeg",
+      ".png"
+    ],
+    "max_size_bytes": 10485760
+  },
+  "safety": {
+    "training_enabled": false,
+    "official_test_inference": false,
+    "threshold_tuning": false,
+    "research_checkpoint_modification": false,
+    "research_result_modification": false,
+    "synthetic_fallback": false
+  }
+}

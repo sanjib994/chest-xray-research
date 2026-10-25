@@ -1,0 +1,2 @@
+checkpoints/prototype/prototype_network_full_training_final.pt filter=lfs diff=lfs merge=lfs -text
+checkpoints/convnext_tiny/convnext_tiny_weak_classes_best.pth filter=lfs diff=lfs merge=lfs -text

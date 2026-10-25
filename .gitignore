@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Product runtime outputs
+results/product/predictions/*
+results/product/explanations/*
+results/product/reliability/*
+
+# Keep directory structure
+!results/product/predictions/.gitkeep
+!results/product/explanations/.gitkeep
+!results/product/reliability/.gitkeep
+
+# Local configuration
+.env
+*.local
+
+# Model files are handled explicitly
+# Do not accidentally commit arbitrary checkpoints.
+*.pt
+*.pth
+*.ckpt
+
+# Locally supplied model metadata and research data
+/configs/prototype/P4_v2_prototype_evidence_manifest.csv
+/data/
+/notebooks/
+/prototype_research/
+/runtime/
+/reports/research/
+/results/research/
+
+# Explicitly approved assets for the app's Git LFS release.
+!/checkpoints/convnext_tiny/convnext_tiny_weak_classes_best.pth
+!/checkpoints/prototype/prototype_network_full_training_final.pt
+!/configs/prototype/P4_v2_prototype_evidence_manifest.csv

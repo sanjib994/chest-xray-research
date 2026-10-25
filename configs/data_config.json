@@ -1,0 +1,63 @@
+{
+  "project_name": "VinBigData_XAI",
+  "data_policy": {
+    "research_data_read_only": true,
+    "copy_images": false,
+    "move_images": false,
+    "modify_research_csv": false,
+    "separate_test_folder_ignored": true
+  },
+  "research_root_env": "VINBIGDATA_RESEARCH_ROOT",
+  "splits": {
+    "train": {
+      "csv": "processed/final_train_split.csv",
+      "expected_rows": 10500,
+      "id_column": "image_id"
+    },
+    "validation": {
+      "csv": "processed/final_val_split.csv",
+      "expected_rows": 1500,
+      "id_column": "image_id"
+    },
+    "official_test": {
+      "csv": "processed/final_test_split.csv",
+      "expected_rows": 3000,
+      "id_column": "image_id"
+    }
+  },
+  "classes": [
+    "Atelectasis",
+    "Cardiomegaly",
+    "Consolidation",
+    "Lung Opacity",
+    "Nodule/Mass",
+    "Pleural Effusion",
+    "Pneumothorax"
+  ],
+  "image_handling": {
+    "color_mode": "RGB",
+    "resize": [
+      224,
+      224
+    ],
+    "normalization": {
+      "type": "ImageNet",
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    }
+  },
+  "runtime_policy": {
+    "training": false,
+    "inference_in_step_10_3": false,
+    "xai_generation": false
+  },
+  "status": "VALIDATED"
+}

@@ -1,0 +1,44 @@
+{
+  "project": "VinBigData_XAI",
+  "posthoc_model": "ConvNeXt-Tiny",
+  "research_artifacts_read_only": true,
+  "regenerate_research_explanations": false,
+  "official_test_inference_in_step_10_5": false,
+  "methods": {
+    "gradcam": {
+      "enabled": true,
+      "module": "src.xai.gradcam",
+      "class": "GradCAM"
+    },
+    "gradcampp": {
+      "enabled": true,
+      "module": "src.xai.gradcampp",
+      "class": "GradCAMPlusPlus"
+    },
+    "prototype_intrinsic": {
+      "enabled": true,
+      "module": "src.xai.prototype_explanation",
+      "class": "GenuinePrototypeNetwork",
+      "requires_prototype_model": true,
+      "checkpoint": "checkpoints/prototype/prototype_network_full_training_final.pt",
+      "evidence_manifest": "configs/prototype/P4_v2_prototype_evidence_manifest.csv"
+    },
+    "integrated_gradients": {
+      "enabled": true,
+      "module": "src.xai.integrated_gradients",
+      "class": "IntegratedGradients",
+      "steps": 32
+    }
+  },
+  "visualization": {
+    "module": "src.xai.visualization"
+  },
+  "safety": {
+    "training": false,
+    "weight_updates": false,
+    "research_artifact_modification": false,
+    "research_explanation_regeneration": false,
+    "faithfulness_evaluation": false
+  },
+  "status": "VALIDATED"
+}

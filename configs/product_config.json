@@ -1,0 +1,10 @@
+{
+  "project_name": "VinBigData_XAI",
+  "stage": "productization",
+  "primary_model": "ConvNeXt-Tiny",
+  "prototype_enabled": true,
+  "official_test_definition": "Optional research workflow only; not used by the app",
+  "separate_test_folder_ignored": true,
+  "research_root_env": "VINBIGDATA_RESEARCH_ROOT",
+  "product_root": "."
+}

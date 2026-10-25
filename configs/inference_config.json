@@ -1,0 +1,45 @@
+{
+  "project": "VinBigData_XAI",
+  "model": {
+    "name": "ConvNeXt-Tiny",
+    "checkpoint": "checkpoints/convnext_tiny/convnext_tiny_weak_classes_best.pth",
+    "checkpoint_read_only": true,
+    "training": false,
+    "weight_updates": false
+  },
+  "diseases": [
+    "Atelectasis",
+    "Cardiomegaly",
+    "Consolidation",
+    "Lung Opacity",
+    "Nodule/Mass",
+    "Pleural Effusion",
+    "Pneumothorax"
+  ],
+  "inference": {
+    "mode": "production",
+    "official_test_evaluation": false,
+    "threshold_tuning": false,
+    "batch_inference": true
+  },
+  "xai": {
+    "gradcam": true,
+    "gradcampp": true,
+    "prototype_explanation": true,
+    "regeneration_in_step_10_7": false
+  },
+  "reliability": {
+    "calibration": true,
+    "uncertainty": true,
+    "robustness": true,
+    "research_evidence_read_only": true
+  },
+  "safety": {
+    "modify_research_checkpoint": false,
+    "modify_research_results": false,
+    "generate_research_explanations": false,
+    "run_official_test": false,
+    "train_model": false
+  },
+  "status": "VALIDATED"
+}

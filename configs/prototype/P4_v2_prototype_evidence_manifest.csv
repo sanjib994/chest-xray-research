@@ -1,0 +1,71 @@
+prototype_id,prototype_index,prototype_class,prototype_class_index,prototype_number_within_class,source_training_image_id,source_image_id,source_image_path,projection_split,feature_grid_height,feature_grid_width,feature_patch_y,feature_patch_x,distance,similarity,distance_metric,similarity_formula,source_image_width,source_image_height,crop_left,crop_top,crop_right,crop_bottom,full_evidence_image,query_patch_image,evidence_generated_from_real_training_image
+Atelectasis-P01,0,Atelectasis,0,1,,,,TRAIN,7,7,3,3,1.1920928244535389e-07,0.9999998807907318,squared_euclidean,1/(1+distance),1024,1024,292,292,731,731,,,True
+Atelectasis-P02,1,Atelectasis,0,2,,,,TRAIN,7,7,2,5,0.0,1.0,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Atelectasis-P03,2,Atelectasis,0,3,,,,TRAIN,7,7,5,0,0.0004978179349564016,0.9995024297644307,squared_euclidean,1/(1+distance),1024,1024,0,585,439,1024,,,True
+Atelectasis-P04,3,Atelectasis,0,4,,,,TRAIN,7,7,1,5,0.004080950748175383,0.9959356357222647,squared_euclidean,1/(1+distance),1024,1024,585,0,1024,439,,,True
+Atelectasis-P05,4,Atelectasis,0,5,,,,TRAIN,7,7,2,5,0.0,1.0,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Atelectasis-P06,5,Atelectasis,0,6,,,,TRAIN,7,7,3,3,1.1920928244535389e-07,0.9999998807907318,squared_euclidean,1/(1+distance),1024,1024,292,292,731,731,,,True
+Atelectasis-P07,6,Atelectasis,0,7,,,,TRAIN,7,7,2,5,0.0,1.0,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Atelectasis-P08,7,Atelectasis,0,8,,,,TRAIN,7,7,2,5,0.0,1.0,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Atelectasis-P09,8,Atelectasis,0,9,,,,TRAIN,7,7,1,1,0.0,1.0,squared_euclidean,1/(1+distance),1024,1024,0,0,439,439,,,True
+Atelectasis-P10,9,Atelectasis,0,10,,,,TRAIN,7,7,1,5,1.0132789611816406e-06,0.9999989867220656,squared_euclidean,1/(1+distance),1024,1024,585,0,1024,439,,,True
+Cardiomegaly-P01,10,Cardiomegaly,1,1,,,,TRAIN,7,7,1,2,0.0025047659873962402,0.9975014921899855,squared_euclidean,1/(1+distance),1024,1024,146,0,585,439,,,True
+Cardiomegaly-P02,11,Cardiomegaly,1,2,,,,TRAIN,7,7,2,6,0.27823659777641296,0.782327780114866,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Cardiomegaly-P03,12,Cardiomegaly,1,3,,,,TRAIN,7,7,1,2,2.5242565243388526e-05,0.9999747580719276,squared_euclidean,1/(1+distance),1024,1024,146,0,585,439,,,True
+Cardiomegaly-P04,13,Cardiomegaly,1,4,,,,TRAIN,7,7,1,2,0.0060887932777404785,0.9939480557596673,squared_euclidean,1/(1+distance),1024,1024,146,0,585,439,,,True
+Cardiomegaly-P05,14,Cardiomegaly,1,5,,,,TRAIN,7,7,1,6,6.788968312321231e-05,0.999932114925573,squared_euclidean,1/(1+distance),1024,1024,585,0,1024,439,,,True
+Cardiomegaly-P06,15,Cardiomegaly,1,6,,,,TRAIN,7,7,1,1,0.01799057424068451,0.9823273665828354,squared_euclidean,1/(1+distance),1024,1024,0,0,439,439,,,True
+Cardiomegaly-P07,16,Cardiomegaly,1,7,,,,TRAIN,7,7,1,4,2.3931263058329932e-05,0.9999760693096333,squared_euclidean,1/(1+distance),1024,1024,439,0,878,439,,,True
+Cardiomegaly-P08,17,Cardiomegaly,1,8,,,,TRAIN,7,7,1,2,0.0001283586025238037,0.9998716578712925,squared_euclidean,1/(1+distance),1024,1024,146,0,585,439,,,True
+Cardiomegaly-P09,18,Cardiomegaly,1,9,,,,TRAIN,7,7,1,1,1.1563301995920483e-05,0.9999884368317125,squared_euclidean,1/(1+distance),1024,1024,0,0,439,439,,,True
+Cardiomegaly-P10,19,Cardiomegaly,1,10,,,,TRAIN,7,7,1,2,0.0001283586025238037,0.9998716578712925,squared_euclidean,1/(1+distance),1024,1024,146,0,585,439,,,True
+Consolidation-P01,20,Consolidation,2,1,,,,TRAIN,7,7,2,6,3.576278970740532e-07,0.9999996423722308,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Consolidation-P02,21,Consolidation,2,2,,,,TRAIN,7,7,5,0,0.0004932880983687937,0.999506955114805,squared_euclidean,1/(1+distance),1024,1024,0,585,439,1024,,,True
+Consolidation-P03,22,Consolidation,2,3,,,,TRAIN,7,7,2,6,3.576278970740532e-07,0.9999996423722308,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Consolidation-P04,23,Consolidation,2,4,,,,TRAIN,7,7,2,5,0.0,1.0,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Consolidation-P05,24,Consolidation,2,5,,,,TRAIN,7,7,4,6,6.204842793522403e-05,0.9999379554218333,squared_euclidean,1/(1+distance),1024,1024,585,439,1024,878,,,True
+Consolidation-P06,25,Consolidation,2,6,,,,TRAIN,7,7,2,5,0.00012670618889387697,0.9998733098635305,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Consolidation-P07,26,Consolidation,2,7,,,,TRAIN,7,7,1,5,5.960464477539063e-08,0.9999999403953588,squared_euclidean,1/(1+distance),1024,1024,585,0,1024,439,,,True
+Consolidation-P08,27,Consolidation,2,8,,,,TRAIN,7,7,2,6,3.576278970740532e-07,0.9999996423722308,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Consolidation-P09,28,Consolidation,2,9,,,,TRAIN,7,7,3,2,2.8617912903428078e-05,0.999971382906058,squared_euclidean,1/(1+distance),1024,1024,146,292,585,731,,,True
+Consolidation-P10,29,Consolidation,2,10,,,,TRAIN,7,7,2,3,1.0520218893361744e-05,0.9999894798917804,squared_euclidean,1/(1+distance),1024,1024,292,146,731,585,,,True
+Lung Opacity-P01,30,Lung Opacity,3,1,,,,TRAIN,7,7,2,2,0.0002329088601982221,0.9997671453737074,squared_euclidean,1/(1+distance),1024,1024,146,146,585,585,,,True
+Lung Opacity-P02,31,Lung Opacity,3,2,,,,TRAIN,7,7,2,5,4.748580977320671e-06,0.9999952514415716,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Lung Opacity-P03,32,Lung Opacity,3,3,,,,TRAIN,7,7,3,3,0.0032008588314056396,0.9968093539760978,squared_euclidean,1/(1+distance),1024,1024,292,292,731,731,,,True
+Lung Opacity-P04,33,Lung Opacity,3,4,,,,TRAIN,7,7,2,2,8.843838259053882e-06,0.9999911562399537,squared_euclidean,1/(1+distance),1024,1024,146,146,585,585,,,True
+Lung Opacity-P05,34,Lung Opacity,3,5,,,,TRAIN,7,7,2,3,2.7418136596679688e-06,0.9999972581938579,squared_euclidean,1/(1+distance),1024,1024,292,146,731,585,,,True
+Lung Opacity-P06,35,Lung Opacity,3,6,,,,TRAIN,7,7,1,2,4.470348358154297e-08,0.9999999552965184,squared_euclidean,1/(1+distance),1024,1024,146,0,585,439,,,True
+Lung Opacity-P07,36,Lung Opacity,3,7,,,,TRAIN,7,7,2,2,0.018099309876561165,0.9822224514828956,squared_euclidean,1/(1+distance),1024,1024,146,146,585,585,,,True
+Lung Opacity-P08,37,Lung Opacity,3,8,,,,TRAIN,7,7,2,1,0.0024014711380004883,0.9976042821093687,squared_euclidean,1/(1+distance),1024,1024,0,146,439,585,,,True
+Lung Opacity-P09,38,Lung Opacity,3,9,,,,TRAIN,7,7,2,5,1.1187513138111171e-07,0.9999998881248812,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Lung Opacity-P10,39,Lung Opacity,3,10,,,,TRAIN,7,7,2,2,0.0027195140719413757,0.9972878616265304,squared_euclidean,1/(1+distance),1024,1024,146,146,585,585,,,True
+Nodule/Mass-P01,40,Nodule/Mass,4,1,,,,TRAIN,7,7,2,2,0.00043085587094537914,0.9995693296858879,squared_euclidean,1/(1+distance),1024,1024,146,146,585,585,,,True
+Nodule/Mass-P02,41,Nodule/Mass,4,2,,,,TRAIN,7,7,1,5,5.8673322200775146e-08,0.9999999413266812,squared_euclidean,1/(1+distance),1024,1024,585,0,1024,439,,,True
+Nodule/Mass-P03,42,Nodule/Mass,4,3,,,,TRAIN,7,7,1,1,1.7913988585860352e-06,0.9999982086043505,squared_euclidean,1/(1+distance),1024,1024,0,0,439,439,,,True
+Nodule/Mass-P04,43,Nodule/Mass,4,4,,,,TRAIN,7,7,3,2,1.121428795158863e-06,0.9999988785724624,squared_euclidean,1/(1+distance),1024,1024,146,292,585,731,,,True
+Nodule/Mass-P05,44,Nodule/Mass,4,5,,,,TRAIN,7,7,3,2,1.121428795158863e-06,0.9999988785724624,squared_euclidean,1/(1+distance),1024,1024,146,292,585,731,,,True
+Nodule/Mass-P06,45,Nodule/Mass,4,6,,,,TRAIN,7,7,3,2,1.121428795158863e-06,0.9999988785724624,squared_euclidean,1/(1+distance),1024,1024,146,292,585,731,,,True
+Nodule/Mass-P07,46,Nodule/Mass,4,7,,,,TRAIN,7,7,4,0,0.0022547838743776083,0.9977502887382973,squared_euclidean,1/(1+distance),1024,1024,0,439,439,878,,,True
+Nodule/Mass-P08,47,Nodule/Mass,4,8,,,,TRAIN,7,7,2,6,1.924717980728019e-05,0.9999807531906395,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Nodule/Mass-P09,48,Nodule/Mass,4,9,,,,TRAIN,7,7,2,2,0.0001023411750793457,0.999897669297565,squared_euclidean,1/(1+distance),1024,1024,146,146,585,585,,,True
+Nodule/Mass-P10,49,Nodule/Mass,4,10,,,,TRAIN,7,7,1,1,0.00678899884223938,0.9932567808646634,squared_euclidean,1/(1+distance),1024,1024,0,0,439,439,,,True
+Pleural Effusion-P01,50,Pleural Effusion,5,1,,,,TRAIN,7,7,2,3,0.0004132091999053955,0.9995869614714146,squared_euclidean,1/(1+distance),1024,1024,292,146,731,585,,,True
+Pleural Effusion-P02,51,Pleural Effusion,5,2,,,,TRAIN,7,7,2,4,6.537884473800659e-05,0.999934625429376,squared_euclidean,1/(1+distance),1024,1024,439,146,878,585,,,True
+Pleural Effusion-P03,52,Pleural Effusion,5,3,,,,TRAIN,7,7,2,4,0.0001174062563222833,0.9998826075262885,squared_euclidean,1/(1+distance),1024,1024,439,146,878,585,,,True
+Pleural Effusion-P04,53,Pleural Effusion,5,4,,,,TRAIN,7,7,2,4,6.537884473800659e-05,0.999934625429376,squared_euclidean,1/(1+distance),1024,1024,439,146,878,585,,,True
+Pleural Effusion-P05,54,Pleural Effusion,5,5,,,,TRAIN,7,7,1,2,3.889203071594238e-06,0.9999961108120542,squared_euclidean,1/(1+distance),1024,1024,146,0,585,439,,,True
+Pleural Effusion-P06,55,Pleural Effusion,5,6,,,,TRAIN,7,7,1,1,0.00030660632182843983,0.9996934876567937,squared_euclidean,1/(1+distance),1024,1024,0,0,439,439,,,True
+Pleural Effusion-P07,56,Pleural Effusion,5,7,,,,TRAIN,7,7,2,2,9.313225746154785e-09,0.9999999906867744,squared_euclidean,1/(1+distance),1024,1024,146,146,585,585,,,True
+Pleural Effusion-P08,57,Pleural Effusion,5,8,,,,TRAIN,7,7,1,1,5.317479372024536e-05,0.9999468280336881,squared_euclidean,1/(1+distance),1024,1024,0,0,439,439,,,True
+Pleural Effusion-P09,58,Pleural Effusion,5,9,,,,TRAIN,7,7,3,3,3.829598426818848e-06,0.9999961704162389,squared_euclidean,1/(1+distance),1024,1024,292,292,731,731,,,True
+Pleural Effusion-P10,59,Pleural Effusion,5,10,,,,TRAIN,7,7,1,2,4.3213367462158203e-07,0.9999995678665121,squared_euclidean,1/(1+distance),1024,1024,146,0,585,439,,,True
+Pneumothorax-P01,60,Pneumothorax,6,1,,,,TRAIN,7,7,2,5,1.1920928244535389e-07,0.9999998807907318,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Pneumothorax-P02,61,Pneumothorax,6,2,,,,TRAIN,7,7,2,4,0.0,1.0,squared_euclidean,1/(1+distance),1024,1024,439,146,878,585,,,True
+Pneumothorax-P03,62,Pneumothorax,6,3,,,,TRAIN,7,7,4,6,0.00034058094024658203,0.9996595350156379,squared_euclidean,1/(1+distance),1024,1024,585,439,1024,878,,,True
+Pneumothorax-P04,63,Pneumothorax,6,4,,,,TRAIN,7,7,2,5,0.0005105733871459961,0.9994896871650066,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Pneumothorax-P05,64,Pneumothorax,6,5,,,,TRAIN,7,7,2,5,1.1920928244535389e-07,0.9999998807907318,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Pneumothorax-P06,65,Pneumothorax,6,6,,,,TRAIN,7,7,1,1,0.0,1.0,squared_euclidean,1/(1+distance),1024,1024,0,0,439,439,,,True
+Pneumothorax-P07,66,Pneumothorax,6,7,,,,TRAIN,7,7,2,5,1.1920928244535389e-07,0.9999998807907318,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Pneumothorax-P08,67,Pneumothorax,6,8,,,,TRAIN,7,7,2,5,1.1920928244535389e-07,0.9999998807907318,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Pneumothorax-P09,68,Pneumothorax,6,9,,,,TRAIN,7,7,2,5,1.1920928244535389e-07,0.9999998807907318,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True
+Pneumothorax-P10,69,Pneumothorax,6,10,,,,TRAIN,7,7,2,5,1.1920928244535389e-07,0.9999998807907318,squared_euclidean,1/(1+distance),1024,1024,585,146,1024,585,,,True

@@ -1,0 +1,49 @@
+{
+  "project": "VinBigData_XAI",
+  "research_root_env": "VINBIGDATA_RESEARCH_ROOT",
+  "research_artifacts_read_only": true,
+  "official_test_evaluation_in_step_10_6": false,
+  "training": false,
+  "weight_updates": false,
+  "threshold_tuning": false,
+  "methods": {
+    "calibration": {
+      "enabled": true,
+      "module": "src.reliability.calibration",
+      "metrics": [
+        "expected_calibration_error",
+        "brier_score",
+        "reliability_bins"
+      ]
+    },
+    "uncertainty": {
+      "enabled": true,
+      "module": "src.reliability.uncertainty",
+      "metrics": [
+        "binary_entropy",
+        "confidence_uncertainty",
+        "probability_margin",
+        "multiclass_entropy"
+      ]
+    },
+    "robustness": {
+      "enabled": true,
+      "module": "src.reliability.robustness",
+      "operations": [
+        "gaussian_noise",
+        "brightness",
+        "contrast",
+        "prediction_shift",
+        "prediction_agreement"
+      ]
+    }
+  },
+  "safety": {
+    "research_artifact_modification": false,
+    "research_result_regeneration": false,
+    "official_test_evaluation": false,
+    "checkpoint_modification": false,
+    "training": false
+  },
+  "status": "VALIDATED"
+}

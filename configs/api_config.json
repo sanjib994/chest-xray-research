@@ -1,0 +1,37 @@
+{
+  "service": {
+    "name": "VinBigData_XAI",
+    "version": "1.0.0",
+    "framework": "FastAPI"
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8000,
+    "reload": false
+  },
+  "endpoints": [
+    "/health",
+    "/info",
+    "/predict"
+  ],
+  "upload": {
+    "max_size_mb": 20,
+    "allowed_formats": [
+      "jpeg",
+      "jpg",
+      "png"
+    ]
+  },
+  "model": {
+    "name": "ConvNeXt-Tiny",
+    "training_enabled": false,
+    "checkpoint_modification": false
+  },
+  "research_safety": {
+    "official_test_inference": false,
+    "threshold_tuning": false,
+    "research_result_modification": false,
+    "research_explanation_regeneration": false
+  },
+  "status": "VALIDATED"
+}

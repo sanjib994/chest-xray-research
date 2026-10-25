@@ -1,0 +1,8 @@
+{
+  "primary_model": "ConvNeXt-Tiny",
+  "primary_checkpoint": "checkpoints/convnext_tiny/convnext_tiny_weak_classes_best.pth",
+  "primary_checkpoint_distribution": "Git LFS",
+  "prototype_model": "DenseNet-backed intrinsic prototype network",
+  "prototype_checkpoint": "checkpoints/prototype/prototype_network_full_training_final.pt",
+  "prototype_checkpoint_distribution": "Git LFS"
+}

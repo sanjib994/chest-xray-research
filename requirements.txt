@@ -1,0 +1,21 @@
+# Core Data Science
+numpy
+pandas
+Pillow
+scikit-learn
+
+# Deep Learning
+torch
+torchvision
+
+# Visualization
+matplotlib
+
+# Web Framework & API
+fastapi
+uvicorn[standard]
+streamlit
+python-dotenv
+
+# HTTP Client
+requests
