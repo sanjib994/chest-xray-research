@@ -49,6 +49,7 @@ results/product/reliability/*
 # Locally supplied model metadata and research data
 /configs/prototype/P4_v2_prototype_evidence_manifest.csv
 /data/
+/assets/prototype_evidence/
 /notebooks/
 /prototype_research/
 /runtime/

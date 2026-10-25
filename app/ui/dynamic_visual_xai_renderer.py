@@ -11,6 +11,15 @@ import streamlit as st
 from PIL import Image
 
 
+def _fetch_prototype_asset(api_url: str, asset_path: str) -> Image.Image:
+    response = requests.get(
+        api_url.rstrip("/") + asset_path,
+        timeout=30,
+    )
+    response.raise_for_status()
+    return Image.open(io.BytesIO(response.content)).convert("RGB")
+
+
 def _decode_image(value: str) -> Image.Image:
     raw = base64.b64decode(value)
     return Image.open(
@@ -33,21 +42,23 @@ def render_prototype_explanation(api_url: str, image_bytes: bytes, filename: str
 
     st.subheader("Intrinsic Prototype Explanation")
     st.caption(
-        "These are real prototype similarities from the validated prototype "
-        "checkpoint and training-image evidence manifest."
+        "Prototype matches come from the validated checkpoint. Reference "
+        "images are loaded from the separately supplied evidence-image folder."
     )
+    displayed_evidence = False
     for item in explanation.get("top_prototypes", []):
         evidence_column, details_column = st.columns([1, 1])
         with evidence_column:
             evidence_path = item.get("prototype_evidence_image")
-            if evidence_path and Path(evidence_path).is_file():
+            if evidence_path:
                 st.image(
-                    Image.open(evidence_path).convert("RGB"),
+                    _fetch_prototype_asset(api_url, evidence_path),
                     caption=f"{item['prototype_id']} evidence",
                     use_container_width=True,
                 )
+                displayed_evidence = True
             else:
-                st.caption("Evidence image unavailable.")
+                st.caption("Reference evidence image not installed.")
         with details_column:
             st.markdown(f"**Rank {item['rank']}: {item['prototype_id']}**")
             st.write(f"Prototype class: {item['prototype_class']}")
@@ -59,12 +70,17 @@ def render_prototype_explanation(api_url: str, image_bytes: bytes, filename: str
                     f"{item['source_training_image_id']}"
                 )
             patch_path = item.get("prototype_query_patch")
-            if patch_path and Path(patch_path).is_file():
+            if patch_path:
                 st.image(
-                    Image.open(patch_path).convert("RGB"),
+                    _fetch_prototype_asset(api_url, patch_path),
                     caption="Query patch",
                     use_container_width=True,
                 )
+    if not displayed_evidence:
+        st.info(
+            "Prototype reference images are not installed. See README.md for "
+            "how to provide authorized images in the configured evidence folder."
+        )
 
     evaluation = explanation.get("evaluation", {})
     st.markdown("### Prototype Explanation Evaluation")

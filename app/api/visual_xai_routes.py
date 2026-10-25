@@ -1,5 +1,6 @@
 import fastapi
 import os
+import re
 import tempfile
 
 
@@ -32,6 +33,10 @@ PROTOTYPE_CHECKPOINT = configured_path(
 PROTOTYPE_MANIFEST = configured_path(
     "VINBIGDATA_PROTOTYPE_MANIFEST",
     "configs/prototype/P4_v2_prototype_evidence_manifest.csv",
+)
+PROTOTYPE_IMAGE_ROOT = configured_path(
+    "VINBIGDATA_PROTOTYPE_IMAGE_DIR",
+    "assets/prototype_evidence",
 )
 CALIBRATION_REPORT = configured_path(
     "VINBIGDATA_CALIBRATION_REPORT",
@@ -76,6 +81,18 @@ def visual_xai_status():
     }
 
 
+@router.get("/prototype-assets/{filename}")
+def get_prototype_asset(filename: str):
+    """Serve only explicitly named prototype reference images."""
+    if not re.fullmatch(r"prototype_\d{3}_(full_evidence|query_patch)\.png", filename):
+        raise HTTPException(status_code=404, detail="Prototype evidence image not found.")
+
+    path = PROTOTYPE_IMAGE_ROOT / filename
+    if not path.is_file():
+        raise HTTPException(status_code=404, detail="Prototype evidence image not found.")
+    return FileResponse(path, media_type="image/png")
+
+
 @router.post("/prototype")
 async def generate_prototype_explanation(
     image: fastapi.UploadFile = fastapi.File(...),
@@ -109,6 +126,20 @@ async def generate_prototype_explanation(
         probabilities = torch.sigmoid(output["logits"])[0].cpu().tolist()
         evidence = load_prototype_evidence_index(PROTOTYPE_MANIFEST)
         top_prototypes = rank_prototypes(output, evidence)
+        for item in top_prototypes:
+            index = item["prototype_index"]
+            evidence_filename = f"prototype_{index:03d}_full_evidence.png"
+            patch_filename = f"prototype_{index:03d}_query_patch.png"
+            item["prototype_evidence_image"] = (
+                f"/visual-xai/prototype-assets/{evidence_filename}"
+                if (PROTOTYPE_IMAGE_ROOT / evidence_filename).is_file()
+                else None
+            )
+            item["prototype_query_patch"] = (
+                f"/visual-xai/prototype-assets/{patch_filename}"
+                if (PROTOTYPE_IMAGE_ROOT / patch_filename).is_file()
+                else None
+            )
         selected_index = top_prototypes[0]["prototype_index"]
         selected_class = int(torch.argmax(output["logits"][0]).item())
 

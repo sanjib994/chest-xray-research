@@ -51,7 +51,30 @@ assets. Intrinsic prototype endpoints require both the DenseNet-backed
 prototype checkpoint and its evidence manifest. If the threshold file is
 unavailable, predictions use the existing `0.5` threshold fallback.
 The published prototype manifest omits source-image IDs and local paths;
-training X-ray images are not included in this repository.
+training X-ray images are not included in this repository. To display
+prototype reference images, obtain approved evidence images separately and
+place each PNG in `assets/prototype_evidence` using the filenames
+`prototype_000_full_evidence.png`, `prototype_000_query_patch.png`, and
+corresponding three-digit prototype indices. The image folder is ignored by
+Git. You can also set `VINBIGDATA_PROTOTYPE_IMAGE_DIR` in `.env` to another
+folder. Never put patient images in a public repository unless you have
+verified the applicable consent, privacy, and redistribution requirements.
+
+If you have authorized local access to the original research evidence
+manifest and its referenced images, prepare the app's local image folder with:
+
+```powershell
+python scripts/prepare_prototype_evidence.py `
+  --manifest "PATH_TO_ORIGINAL_PROTOTYPE_EVIDENCE_MANIFEST.csv" `
+  --source-root "PATH_TO_AUTHORIZED_RESEARCH_DATA"
+```
+
+The script copies only the referenced evidence images, renames them to the
+portable prototype-index filenames, and strips embedded image metadata. It
+does not copy the dataset, source IDs, or research manifest. The image
+content itself may still be sensitive; do not redistribute it unless you
+have verified permission and privacy requirements. Other clone users can
+provide their own approved image files with the same filenames.
 
 ## Run
 
